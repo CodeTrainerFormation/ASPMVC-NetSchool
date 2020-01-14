@@ -18,12 +18,14 @@ namespace Dal
 
         static SchoolContext()
         {
-            //Database.SetInitializer<SchoolContext>(new SchoolInitializer());
+            Database.SetInitializer<SchoolContext>(new SchoolInitializer());
         }
 
         public SchoolContext()
             : base("SchoolDb")
         {
+            //this.Configuration.LazyLoadingEnabled = false;
+            //this.Configuration.ProxyCreationEnabled = false;
         }
 
         //fluent api
