@@ -22,7 +22,5 @@ namespace DomainModel
         [Required]
         [StringLength(50)]
         public string LastName { get; set; }
-
-        //public int Age { get; set; }
     }
 }

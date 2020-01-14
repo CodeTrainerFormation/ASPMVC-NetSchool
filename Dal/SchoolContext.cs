@@ -14,7 +14,6 @@ namespace Dal
         public DbSet<Classroom> Classrooms { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Student> Students { get; set; }
-        //public DbSet<Headmaster> Headmasters { get; set; }
 
         static SchoolContext()
         {
@@ -34,7 +33,6 @@ namespace Dal
             modelBuilder.Entity<Classroom>().ToTable("Classroom");
             modelBuilder.Entity<Teacher>().ToTable("Teacher");
             modelBuilder.Entity<Student>().ToTable("Student");
-            //modelBuilder.Entity<Headmaster>().ToTable("Headmaster");
 
             modelBuilder.Entity<Classroom>()
                 .HasRequired(c => c.Teacher)
