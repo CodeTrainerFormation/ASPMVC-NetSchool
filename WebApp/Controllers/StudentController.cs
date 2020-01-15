@@ -60,6 +60,76 @@ namespace WebApp.Controllers
             return View(student);
         }
 
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Student student = this.context.Students.Find(id);
+
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(student);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                this.context.Entry(student).State = System.Data.Entity.EntityState.Modified;
+                this.context.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(student);
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Student student = this.context.Students.Find(id);
+
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(student);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Student student = this.context.Students.Find(id);
+
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            this.context.Students.Remove(student);
+            this.context.SaveChanges();
+
+            return View(student);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if(disposing)
