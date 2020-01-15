@@ -1,0 +1,17 @@
+﻿@model DomainModel.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@Model.FirstName @Model.LastName (id: @Model.PersonID) <br />
+
+@if(Model.IsClassDelegate)
+{
+    @:est délégué de classe<br />
+}
+
+Moyenne : @Model.Average
+

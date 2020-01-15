@@ -18,8 +18,7 @@ namespace WebApp.Controllers
         // GET: Teacher
         public ActionResult Index()
         {
-            var people = db.Teachers.Include(t => t.Classroom);
-            return View(people.ToList());
+            return View(db.Teachers.ToList());
         }
 
         // GET: Teacher/Details/5
@@ -40,7 +39,6 @@ namespace WebApp.Controllers
         // GET: Teacher/Create
         public ActionResult Create()
         {
-            //ViewBag.PersonID = new SelectList(db.Classrooms, "ClassroomID", "Name");
             return View();
         }
 
@@ -58,7 +56,6 @@ namespace WebApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            //ViewBag.PersonID = new SelectList(db.Classrooms, "ClassroomID", "Name", teacher.PersonID);
             return View(teacher);
         }
 
@@ -74,7 +71,6 @@ namespace WebApp.Controllers
             {
                 return HttpNotFound();
             }
-            //ViewBag.PersonID = new SelectList(db.Classrooms, "ClassroomID", "Name", teacher.PersonID);
             return View(teacher);
         }
 
@@ -94,7 +90,6 @@ namespace WebApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.PersonID = new SelectList(db.Classrooms, "ClassroomID", "Name", teacher.PersonID);
             return View(teacher);
         }
 

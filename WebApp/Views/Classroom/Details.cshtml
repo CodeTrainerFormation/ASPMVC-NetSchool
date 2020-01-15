@@ -11,14 +11,6 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Teacher.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Teacher.FirstName)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
 
@@ -43,6 +35,11 @@
         </dd>
 
     </dl>
+
+    @Html.Partial("_StudentList", Model.Students)
+
+    @*@Html.Action("StudentList")*@
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ClassroomID }) |

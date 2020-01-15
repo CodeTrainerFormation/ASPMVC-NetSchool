@@ -29,7 +29,9 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Classroom classroom = db.Classrooms.Find(id);
+            Classroom classroom = db.Classrooms
+                                    .Include(c => c.Students)
+                                    .SingleOrDefault(c => c.ClassroomID == id);
             if (classroom == null)
             {
                 return HttpNotFound();
@@ -37,10 +39,15 @@ namespace WebApp.Controllers
             return View(classroom);
         }
 
+        [ChildActionOnly]
+        public PartialViewResult StudentList()
+        {
+            return PartialView("_StudentList", this.db.Students.ToList());
+        }
+
         // GET: Classroom/Create
         public ActionResult Create()
         {
-            ViewBag.ClassroomID = new SelectList(db.People, "PersonID", "FirstName");
             return View();
         }
 
@@ -57,8 +64,6 @@ namespace WebApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.ClassroomID = new SelectList(db.People, "PersonID", "FirstName", classroom.ClassroomID);
             return View(classroom);
         }
 
@@ -74,7 +79,6 @@ namespace WebApp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ClassroomID = new SelectList(db.People, "PersonID", "FirstName", classroom.ClassroomID);
             return View(classroom);
         }
 
@@ -91,7 +95,6 @@ namespace WebApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ClassroomID = new SelectList(db.People, "PersonID", "FirstName", classroom.ClassroomID);
             return View(classroom);
         }
 

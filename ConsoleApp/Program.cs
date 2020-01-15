@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace ConsoleApp
 {
@@ -14,7 +15,7 @@ namespace ConsoleApp
         {
             using (SchoolContext context = new SchoolContext())
             {
-                List<Classroom> classrooms = context.Classrooms.ToList();
+                List<Classroom> classrooms = context.Classrooms.Include(c => c.Students).ToList();
 
                 foreach (Classroom item in classrooms)
                 {

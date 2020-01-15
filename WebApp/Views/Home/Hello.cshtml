@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Hello";
+}
+
+
+
+
+<h2>Hello @ViewBag.World</h2>
+
+@*hello*@
+
+<!-- commentaire -->
+
+contact@@test.com <br />
+
+@{ 
+    if(ViewBag.World == "world")
+    {
+        @:oui (simple ligne)
+    }
+    else
+    {
+        <text>
+            non (multi lignes)
+        </text>
+    }
+}

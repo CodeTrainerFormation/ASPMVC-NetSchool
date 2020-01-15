@@ -35,8 +35,8 @@ namespace Dal
             modelBuilder.Entity<Student>().ToTable("Student");
 
             modelBuilder.Entity<Classroom>()
-                .HasRequired(c => c.Teacher)
-                .WithOptional(t => t.Classroom);
+                .HasOptional(c => c.Teacher)
+                .WithOptionalDependent(t => t.Classroom);
 
             base.OnModelCreating(modelBuilder);
         }
