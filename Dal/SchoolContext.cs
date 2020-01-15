@@ -17,7 +17,7 @@ namespace Dal
 
         static SchoolContext()
         {
-            Database.SetInitializer<SchoolContext>(new SchoolInitializer());
+            //Database.SetInitializer<SchoolContext>(new SchoolInitializer());
         }
 
         public SchoolContext()

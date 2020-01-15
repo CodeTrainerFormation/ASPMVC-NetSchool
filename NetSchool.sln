@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.960
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{E696A57A-76C5-43A6-BA56-0BB8168AAF6E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "Dal\Dal.csproj", "{0848493B-CFD1-479D-BA3D-2214724CEAC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{8E246A14-F894-48DA-A9E8-67534621CB69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{1838CD74-8C74-4CA9-83E3-24C0DC78F5F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8E246A14-F894-48DA-A9E8-67534621CB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E246A14-F894-48DA-A9E8-67534621CB69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E246A14-F894-48DA-A9E8-67534621CB69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1838CD74-8C74-4CA9-83E3-24C0DC78F5F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1838CD74-8C74-4CA9-83E3-24C0DC78F5F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1838CD74-8C74-4CA9-83E3-24C0DC78F5F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1838CD74-8C74-4CA9-83E3-24C0DC78F5F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
