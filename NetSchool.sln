@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{1838CD74-8C74-4CA9-83E3-24C0DC78F5F9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{D6415310-867A-4FB4-887B-39D21F214D1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gui", "Gui", "{FE2D34BE-46E1-447E-9847-EEAABD3308DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +40,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E696A57A-76C5-43A6-BA56-0BB8168AAF6E} = {D6415310-867A-4FB4-887B-39D21F214D1C}
+		{0848493B-CFD1-479D-BA3D-2214724CEAC0} = {D6415310-867A-4FB4-887B-39D21F214D1C}
+		{8E246A14-F894-48DA-A9E8-67534621CB69} = {FE2D34BE-46E1-447E-9847-EEAABD3308DA}
+		{1838CD74-8C74-4CA9-83E3-24C0DC78F5F9} = {FE2D34BE-46E1-447E-9847-EEAABD3308DA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {042D3AAA-DE71-4521-913C-328CF6E4A5E4}

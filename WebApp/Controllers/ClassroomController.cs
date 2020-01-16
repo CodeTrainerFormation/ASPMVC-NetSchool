@@ -11,12 +11,15 @@ using DomainModel;
 
 namespace WebApp.Controllers
 {
+    //[RoutePrefix("Class")]
     public class ClassroomController : Controller
     {
         private SchoolContext db = new SchoolContext();
 
         // GET: Classroom
         // GET: Classroom/Index
+        //[Route("")]
+        //[Route("Index")]
         public ActionResult Index()
         {
             return View(db.Classrooms.ToList());

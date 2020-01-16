@@ -13,6 +13,15 @@ namespace WebApp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute(
+                name: "StudentPhoto",
+                url: "Photo/{studentid}",
+                defaults: new { controller = "Student", action = "Photo" },
+                constraints: new { studentid = @"\d+" }
+            ); // la route valide http://school.lan/Photo/5
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

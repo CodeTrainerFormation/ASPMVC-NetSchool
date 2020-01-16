@@ -22,6 +22,17 @@ namespace WebApp.Controllers
             return View(model);
         }
 
+        public ActionResult Photo(int studentid)
+        {
+            //string name2 = "img" + studentid + ".gif";
+            //string name1 = string.Format("img{0}.gif", studentid);
+            string name = $"img{studentid}.gif"; //interpolation 
+
+            //string js = `img${studentid}.gif`;
+
+            return File("C:\\man-portrait-silhouette.gif", "image/gif", name);
+        }
+
         // GET: Student/Details/2
         public ActionResult Details(int? id)
         {

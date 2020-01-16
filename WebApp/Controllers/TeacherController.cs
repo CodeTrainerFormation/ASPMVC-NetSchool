@@ -16,6 +16,8 @@ namespace WebApp.Controllers
         private SchoolContext db = new SchoolContext();
 
         // GET: Teacher
+        //[Route("Prof")]
+        //[Route("Prof/List")]
         public ActionResult Index()
         {
             return View(db.Teachers.ToList());
